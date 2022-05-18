@@ -1,0 +1,27 @@
+//$base-body-size: 16px;
+//@function rem($value) {
+//  $remValue: (calc ($value / $base-body-size)) + rem;
+//  @return $remValue;
+//}
+
+
+@mixin white($opacity){
+  color: rgba(255,255,255,$opacity);
+}
+
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+  text-shadow: $x $y $blur $color;
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius:    $radius;
+  -webkit-border-radius: $radius;
+  border-radius:         $radius;
+}
+
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $size: 0, $inset: "") {
+
+  -webkit-box-shadow: #{$inset} $x $y $blur $size $color;
+  -moz-box-shadow: #{$inset} $x $y $blur $size $color;
+  box-shadow: #{$inset} $x $y $blur $size $color;
+}

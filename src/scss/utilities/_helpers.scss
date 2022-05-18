@@ -1,0 +1,58 @@
+$spaceamounts: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fz-10 {
+  font-size: rem(10px);
+}
+
+.fz-12 {
+  font-size: rem(12px);
+}
+
+.fz-14 {
+  font-size: rem(14px);
+}
+
+.fz-16 {
+  font-size: rem(16px);
+}
+
+.fz-22 {
+  font-size: rem(22px);
+}
+
+.fz-24 {
+  font-size: rem(24px);
+}
+
+.fz-26 {
+  font-size: rem(26px);
+}

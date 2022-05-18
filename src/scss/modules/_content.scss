@@ -1,0 +1,99 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .b-cont {
+    max-width: 1200px;
+    display: flex;
+    padding: 70px 0 50px;
+
+    .cont-question {
+      svg {
+        padding-right: 20px;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .cont-item {
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+
+      h1 {
+        height: 24px;
+        font-size: 16px;
+        margin: 0;
+      }
+    }
+
+    .cont-actions {
+      display: flex;
+      align-items: center;
+      margin-left: 50px;
+
+      .act-save {
+        width: 65px;
+        font-size: 14px;
+        font-weight: 500;
+        height: 40px;
+        background: $color-gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+      }
+
+      .act-like {
+        width: 80px;
+        height: 40px;
+        font-size: 14px;
+        font-weight: 500;
+        background: deeppink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        margin-left: 10px;
+        color: $color-white;
+
+        svg {
+          fill: $color-white;
+          margin-top: 2px;
+          margin-right: 5px;
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+
+  .img-pswp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      border-radius: 8px;
+      width: 95%;
+      height: auto;
+    }
+  }
+
+  .img-preview {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin: 20px;
+      width: 70px;
+      height: 50px;
+
+      &:hover {
+        @include box-shadow(4px, 4px, 5px)
+      }
+    }
+  }
+}
