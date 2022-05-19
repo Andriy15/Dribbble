@@ -96,4 +96,47 @@
       }
     }
   }
+
+  .box-text {
+    max-width: 770px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    p {
+      line-height: 30px;
+      font-weight: 400;
+      opacity: 0.8;
+      font-size: 20px;
+      margin-top: 15px;
+
+      a {
+        color: deeppink;
+      }
+    }
+  }
+
+  .author {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+
+    hr {
+      width: 35%;
+    }
+
+    svg {
+      margin: 0 20px;
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+  .ben-schade {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 30px;
+  }
 }

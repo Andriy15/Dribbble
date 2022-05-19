@@ -13,3 +13,17 @@ navToggle.addEventListener('click', () => {
         }
     }
 })
+
+const mainPhoto = document.querySelector('.main-img')
+const template = document.querySelector('.template')
+const preview = document.querySelector('.preview')
+
+const array = ['./images/template.jpeg', './images/Preview.jpeg']
+
+template.addEventListener('click', () => {
+    mainPhoto.src = array[0]
+})
+
+preview.addEventListener('click', () => {
+    mainPhoto.src = array[1]
+})
