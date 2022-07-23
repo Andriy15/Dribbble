@@ -8,13 +8,15 @@ a {
   text-decoration: none;
 }
 .navbar {
+  position: fixed;
   z-index: 11;
-  height: 80px;
+  padding: 20px 0;
   display: flex;
   width: 100vw;
   background-color: $color-white;
   font-size: 20px;
   border-bottom: 1px solid $color-gray;
+  transition: linear;
 }
 /* Toggle button */
 
@@ -33,7 +35,11 @@ a {
   display: flex;
   max-width: 100%;
   padding-left: 0;
-  list-style: none;
+  list-style-type: none;
+
+  hr {
+    display: none;
+  }
 
 
   li:hover {
@@ -41,15 +47,17 @@ a {
   }
 
   li {
-    opacity: 0.6;
     font-weight: 600;
-    padding: 30px 16px;
+    padding: 15px 0px;
     display: inline;
-    color: #ffffff;
 
-    a {
-      font-size: 14px;
-      color: $color-black;
+    .dropdown {
+      background: transparent;
+    }
+
+    button {
+      font-size: 13px;
+      color: $primary-color;
     }
   }
 
@@ -62,66 +70,123 @@ a {
 
 .list-nav {
   width: 100%;
-  display: flex;
-
-  .dribble {
-    font-weight: 600;
-    padding: 30px 16px;
-    display: inline;
-    color: #ffffff;
-  }
-}
-
-.nav-actions {
-  width: 280px;
-  margin-right: 25px;
+  height: auto;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-evenly;
 
-  li {
-    padding: 0 10px;
-    list-style-type: none;
-    position: relative;
-    left: 0;
-    font-size: 18px;
-
-    a {
-      cursor: pointer;
-      opacity: 0.7;
-      color: $color-black;
-
-      svg {
-        cursor: pointer;
-      }
-    }
-
-    .sing-up {
-      display: flex;
-      align-items: center;
-      text-align: center;
-      width: 80px;
-      height: 40px;
-      background-color: deeppink;
-      justify-content: center;
-      border-radius: 8px;
-
-      &:hover {
-        opacity: 0.7;
-      }
-
-      a {
-        font-size: 16px;
-        color: $color-white;
-        opacity: 1;
-      }
-    }
+  img {
+    max-width: 200%;
+    height: 40px;
   }
 
-  i {
-    color: black;
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+
+}
+
+
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: transparent;
+  padding: 16px;
+  font-size: 15px;
+  border: none;
+  font-weight: 600;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  svg {
+    color: #506a85;
   }
 }
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: $color-gray;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+  a {
+    color: grey;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+
+    &:hover {
+      color: $color-white;
+    }
+
+    input {
+      width: 200px;
+      padding: 10px;
+      height: 35px;
+      border: 1px solid lightgray;
+
+      &::placeholder {
+        opacity: .3;
+      }
+    }
+  }
+
+  button {
+    background: #20c997;
+    border: 0;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    left: 186px;
+    border-radius: 3px;
+    bottom: 43px;
+    @include box-shadow(.5px, .5px, 2px, black)
+  }
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #20c997;
+}
+
+.dropdown-content a .back:hover {
+  background-color: $color-gray;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .search{
+  display: block;
+  position: absolute;
+  right: 0px;
+}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: $color-gray;
+  color: #20c997;
+}
+
+.dropdown-content .search {
+  background: white;
+}
+
+
+
+
 
 
 @media only screen and (max-width : 992px){
@@ -139,7 +204,12 @@ a {
   }
 
   .main_nav {
+    width: 100vw;
     display: none;
+
+    hr {
+      display: block;
+    }
 
     li {
       width: 100%;
@@ -147,10 +217,66 @@ a {
       font-size: 25px;
       justify-content: center;
       padding: 0%;
+      overflow: hidden;
+    }
+
+    /* Dropdown Button */
+    .dropbtn {
+      background-color: transparent;
+      font-size: 15px;
+      border: none;
+      font-weight: 600;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+
+      svg {
+        color: #506a85;
+      }
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: $color-gray;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+
+      a {
+        color: grey;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 13px;
+
+        &:hover {
+          color: $color-white;
+        }
+
+        input {
+          width: 200px;
+          height: 35px;
+
+
+          &::placeholder {
+            padding: 10px;
+          }
+        }
+      }
     }
   }
 
   .show_nav {
+    padding-left: 80px;
+    width: 100vw;
+    background: #f1efef;
+    position: absolute;
+    top: 100px;
     padding-top: 2%;
     display: flex;
     width: 100vw;
@@ -171,4 +297,22 @@ a {
     display: block;
   }
 
+  .list-nav {
+    display: flex;
+    justify-content: space-between;
+
+    svg {
+      display: none;
+    }
+
+    img {
+      margin-left: 80px;
+    }
+
+    hr {
+      opacity: 0.3;
+    }
+  }
 }
+
+
