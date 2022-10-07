@@ -133,7 +133,7 @@ a {
       padding: 10px;
       height: 35px;
       border: 1px solid lightgray;
-
+      outline: none;
       &::placeholder {
         opacity: .3;
       }
@@ -171,6 +171,8 @@ a {
   display: block;
   position: absolute;
   right: 0px;
+  height: 60px;
+  border-radius: 5px;
 }
 
 

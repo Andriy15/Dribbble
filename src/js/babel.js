@@ -5,7 +5,7 @@ const btnSearch = document.querySelector('.btn-search')
 btnSearch.addEventListener('click', () => {
     const promise = new Promise(resolve => {
         setTimeout(() => {
-            alert('Nothing to search')
+            alert('No result')
         }, 3000)
         resolve()
     })
@@ -16,7 +16,7 @@ btnSearch.addEventListener('click', () => {
 navToggle.addEventListener('click', () => {
     if(links.classList.toggle("show_nav")){
         window.onscroll =  function (){
-            window.scrollTo(0, 0);
+            window.scrollTo(0, 0)
         }
 
     }else {
