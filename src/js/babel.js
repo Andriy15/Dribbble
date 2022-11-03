@@ -19,7 +19,6 @@ navToggle.addEventListener('click', () => {
             window.scrollTo(0, 0)
         }
 
-
     }else {
         window.onscroll = () => {
             window.scroll()
